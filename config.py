@@ -7,7 +7,7 @@ TELEGRAM_BOT_TOKEN = "8617850044:AAFdXOEG4Mq9OWGaN3dWvv-YUeLK5c5x5h4"   # Ex: 74
 TELEGRAM_CHAT_ID   = "5521890020" # Ex: 123456789
 
 # --- EBAY API ---
-EBAY_APP_ID = "METS_TON_EBAY_APP_ID_ICI"    # Créé gratuitement sur developer.ebay.com
+EBAY_APP_ID = "Ibrahima-LBCSinpe-PRD-2183ec2e3-9023d18d"    # Créé gratuitement sur developer.ebay.com
 
 # --- STRATÉGIE ---
 BUY_PRICE_RATIO   = 0.60   # Achète max à 60% du prix de revente estimé
