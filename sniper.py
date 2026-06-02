@@ -66,20 +66,19 @@ def parse_price(text):
 
 def get_lbc_rss(search_config):
     """Récupère les annonces via le flux RSS Leboncoin"""
-    keyword = search_config["keyword"].replace(" ", "%20")
-    category = search_config.get("category", "")
+    keyword = search_config["keyword"].replace(" ", "+")
     max_price = search_config.get("max_price", "")
-    region = search_config.get("region", "ile_de_france")
 
     url = f"https://www.leboncoin.fr/recherche.rss?text={keyword}"
-    if category:
-        url += f"&category={category}"
     if max_price:
         url += f"&price=0-{max_price}"
-    if region:
-        url += f"&region={region}"
 
-    feed = feedparser.parse(url)
+    print(f"  [RSS URL] {url}")
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    response = requests.get(url, headers=headers, timeout=10)
+    feed = feedparser.parse(response.content)
     return feed.entries
 
 
