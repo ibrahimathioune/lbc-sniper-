@@ -238,7 +238,7 @@ def run():
             except Exception as e:
                 print(f"  [RSS] Erreur : {e}")
                 continue
-print(f"  [RSS] {len(entries)} annonces trouvées")
+            print(f"  [RSS] {len(entries)} annonces trouvées")
             for entry in entries:
                 entry_id = entry.get("id") or entry.get("link")
                 if entry_id in seen_ids:
